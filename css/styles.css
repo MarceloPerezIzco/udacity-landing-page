@@ -1,0 +1,320 @@
+/* table of contents
+==================================================
+    - fonts
+    - variables
+	- base rules
+	- layout rules
+    - modules rules
+    - state rules
+    - theme rules
+*/
+
+/* fonts
+================================================== */
+
+/* Inter  Regular 400 (latin) */
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Inter SemiBold 600 (latin) */
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+/* variables
+================================================== */
+
+:root {
+    /* fonts */
+    --main-font: "Inter", sans-serif;
+    /* colours */
+    --white-colour: #fff;
+    --bright-gray: #eee;
+    --bitter-lemon-colour: #cc1;
+    --dark-charcoal: #333;
+    --black-colour: #000;
+    --han-blue-colour: #4158D0;
+    --deep-fuchsia: #C850C0;
+    --topaz-colour: #FFCC70;
+    /* breakpoints */
+    --bp-md: 576px;
+    --bp-l: 992px;
+    --bp-xl: 1400px;
+    --bp-xxl: 1920px;
+}
+
+
+/* base rules
+================================================== */
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    font-family: var(--main-font);
+    /* background-color: var(--white-colour); */
+    /* background: rgb(136,203,171);
+    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%); */
+    color: var(--white-colour);
+    background-color: var(--han-blue-colour);
+    background-image: linear-gradient(43deg, var(--han-blue-colour) 0%, var(--deep-fuchsia) 46%, var(--topaz-colour) 100%);
+    text-align: center;
+}
+
+h1,
+h2 {
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1vw;
+}
+
+h1 {
+    font-family: var(--main-font);
+    font-size: 4rem;
+}
+
+@media (min-width: 576px) {
+    h1 {
+        font-size: 5.6rem;
+    }
+}
+
+h2 {
+    font-size: 2.4rem;
+    color: var(--white-colour);
+}
+
+p {
+    color: var(--bright-gray);
+    font-size: 2.4rem;
+    width: min(90%, 120rem);
+}
+
+@media (min-width: 576px) {
+    p {
+        font-size: 3.2rem;
+    }
+}
+
+
+/* layout rules
+================================================== */
+
+main {
+    margin: 0 2.4rem 4rem;
+}
+
+.main__hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section {
+    position: relative;
+    height: 80vh;
+    margin: 16rem 0;
+    border-radius: 1.6rem;
+    transition: all 0.3s ease;
+}
+
+
+/* modules rules
+================================================== */
+
+/* navigation styles */
+.navbar ul {
+    padding-left: 0;
+    margin: 0;
+    text-align: right;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar .menu__link {
+    display: block;
+    padding: 1rem 1.6rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--black-colour);
+    border-radius: 0.8rem;
+    margin: 0 0.4rem;
+}
+
+.navbar .menu__link:hover,
+.navbar .menu__link.active {
+    background: var(--han-blue-colour);
+    color: var(--white-colour);
+    transition: all 0.3s ease;
+}
+
+/* header styles */
+.header {
+    background: var(--white-colour);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    transition: all 0.3s ease;
+    padding: 0.8rem;
+}
+
+.header.is-hidden {
+    top: -8rem;
+}
+
+/* footer */
+.page__footer {
+    background: var(--black-colour);
+    padding: 3rem;
+    color: var(--white-colour);
+}
+
+.page__footer p {
+    margin: 0 auto;
+    font-size: 1.6rem;
+}
+/* theme rules
+================================================== */
+
+.main__heading {
+    margin-top: auto;
+}
+
+.main__hero-cta {
+    display: block;
+    margin: auto 0 5.6rem;
+}
+
+/* landing container styles */
+.landing__container {
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+@media (min-width: 576px) {
+    .landing__container {
+        padding: 4rem;
+    }
+}
+
+/* background circles */
+/* Note that background circles are created with pseudo elements before and after */
+/* Circles appear to be random do to use of :nth-of-type pseudo class */
+section:nth-of-type(odd) .landing__container::before,
+section:nth-of-type(odd) .landing__container::after,
+section:nth-of-type(even) .landing__container::before,
+section:nth-of-type(even) .landing__container::after {
+    content: "";
+    background: rgba(255, 255, 255, 0.06);
+    position: absolute;
+    z-index: -5;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+section:nth-of-type(odd) .landing__container::before {
+    left: 8rem;
+    top: 8rem;
+}
+
+section:nth-of-type(odd) .landing__container::after {
+    right: 8rem;
+    bottom: 8rem;
+}
+
+section:nth-of-type(even) .landing__container::before {
+    right: 8rem;
+    top: 8rem;
+}
+
+section:nth-of-type(even) .landing__container::after {
+    left: 8rem;
+    bottom: 8rem;
+}
+
+
+/* ---- Theme State Rules ---- */
+/* Section Active Styles */
+/* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
+section.section-active {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+section.section-active .landing__container::before {
+    opacity: 1;
+    animation: rotate 4s linear 0s infinite forwards;
+}
+
+section.section-active .landing__container::after {
+    opacity: 1;
+    animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+/* Section Active Styles Keyframe Animations */
+@keyframes rotate {
+	from {
+		transform: rotate(0deg)
+		           translate(-1em)
+		           rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg)
+		           translate(-1em) 
+		           rotate(-360deg);
+	}
+}
+
+/* to top button */
+.to-top {
+    background: var(--topaz-colour);
+    position: fixed;
+    width: 6rem;
+    height: 6rem;
+    right: 4rem;
+    bottom: 4rem;
+    border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}

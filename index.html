@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- HTML Follows BEM naming conventions 
+    IDs are only used for sections to connect menu achors to sections -->
+    <header class="header">
+        <nav class="navbar">
+            <ul id="navbar__list">
+                <!-- Navigation built dinamically with javaScrips -->
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="main__hero">
+            <h1 class="main__heading">Landing Page</h1>
+            <span class="main__hero-cta">Scroll Down</span>
+        </div>
+        <!-- Each Section has an ID (used for the anchor) and 
+        a data attribute that will populate the li node.
+        Adding more sections will automatically populate nav.
+        The first section is set to active class by default -->
+        <section id="section1" data-nav="Introduction">
+            <div class="landing__container">
+                <h2>Introduction</h2>
+                <p>This Landing Page has been developed for Udacity's "Front End Web Developer Nanodegree" and uses JavaScript to create an interactive navigational experience for the user.</p>
+            </div>
+        </section>
+        <section id="section2" data-nav="Requirements">
+            <div class="landing__container">
+                <h2>Requirements</h2>
+                <p>This project should be a multi-section landing page that adds the navigational items dynamically, depending on the page sections. The section that is actively being viewed should be differentiated in some way. Also, when a user clicks a navigation element, the element should scroll the user to the appropriate section.</p>
+            </div>
+        </section>
+        <section id="section3" data-nav="Extras">
+            <div class="landing__container">
+                <h2>Extras</h2>
+                <p>This landing page hides the navigation bar while the user is not scrolling after two seconds. A scroll-to-the-top button is visible when the user scrolls below the page's fold and disappears when the page reaches the top.</p>
+            </div>
+        </section>
+        <section id="section4" data-nav="Git">
+            <div class="landing__container">
+                <h2>Git</h2>
+                <p>Although it was not a requirement of the project, this page uses Git to save the project's files and any information about them.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="page__footer">
+        <p>&copy Udacity</p>
+    </footer>
+    <button id="to-top" class="to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-up" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#C850C0" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M12 5l0 14" />
+            <path d="M16 9l-4 -4" />
+            <path d="M8 9l4 -4" />
+          </svg>
+    </button>
+    <script src="js/app.js"></script>
+</body>
+</html>
